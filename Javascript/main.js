@@ -31,10 +31,10 @@ const timer = setInterval(function () {
   let minutes = Math.floor((timeRemeins % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((timeRemeins % (1000 * 60)) / 1000);
 
-  myTimer.innerHTML = 
-  `<div class =d-flex 'w-100 justify-content-center'></div>
-  <h2>Next Match:</h2> 
-  <h2 >days: ${days}| hrs: ${hours}| min: ${minutes}| sec:${seconds}</h2>`;
+  myTimer.innerHTML = `<div class = card-body t 'w-100 text-center '>
+   <h2 class="text-center " >Next Match:  days: ${days}| hrs: ${hours}| min: ${minutes}| sec:${seconds}</h2>
+   </div>`;
+   
 
   if (timeRemeins < 0) {
     clearInterval(timer);
