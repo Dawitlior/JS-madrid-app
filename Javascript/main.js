@@ -18,3 +18,26 @@ async function getApi(){
 getApi();
 
 40.456412891088995, -3.6873697165230976;
+
+
+const countDownDate = new Date("December 18, 2022 15:00:00").getTime();
+const myTimer = document.getElementById("timerDiv");
+
+const timer = setInterval(function () {
+  let nowDate = new Date().getTime();
+  let timeRemeins = countDownDate - nowDate;
+  let days = Math.floor(timeRemeins / (1000 * 60 * 60 * 400));
+  let hours = Math.floor((timeRemeins % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((timeRemeins % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((timeRemeins % (1000 * 60)) / 1000);
+
+  myTimer.innerHTML = 
+  `<div class =d-flex 'w-100 justify-content-center'></div>
+  <h2>Next Match:</h2> 
+  <h2 >days: ${days}| hrs: ${hours}| min: ${minutes}| sec:${seconds}</h2>`;
+
+  if (timeRemeins < 0) {
+    clearInterval(timer);
+    document.getElementById("myTimer").innerHTML = "EXPIRED";
+  }
+}, 1000);
