@@ -3,8 +3,7 @@ const API_KEY = "123cedf472ea7d740a81046892916adb";
 async function getApi(){
     try{
         return await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${40.456412891088995}&lon=${-3.6873697165230976}&appid=${API_KEY}`
-        )
+          `https://api.openweathermap.org/data/2.5/weather?lat=${40.456412891088995}&lon=${-3.6873697165230976}&appid=${API_KEY}`)
           .then((res) => res.json())
           .then((item) => console.log(item));
     }
@@ -32,7 +31,7 @@ const timer = setInterval(function () {
   let seconds = Math.floor((timeRemeins % (1000 * 60)) / 1000);
 
   myTimer.innerHTML = `<div class = card-body t 'w-100 text-center '>
-   <h2 class="text-center " >Next Match:  days: ${days}| hrs: ${hours}| min: ${minutes}| sec:${seconds}</h2>
+   <h2 class="text-center " >Next Match:  Days: ${days}| Hrs: ${hours}| Min: ${minutes}| Sec:${seconds}</h2>
    </div>`;
    
 
