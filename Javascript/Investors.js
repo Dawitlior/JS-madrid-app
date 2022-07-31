@@ -1,3 +1,6 @@
+// import getApi from "./main";
+// console.log(getApi());
+
 const iconsArray = [
   "../Photos/Investors/image3.png",
   "../Photos/Investors/image4.png",

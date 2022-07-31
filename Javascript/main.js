@@ -1,11 +1,9 @@
 const API_KEY = "123cedf472ea7d740a81046892916adb";
 let some ; 
 let sun_img= `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`
-async function getApi(){
+export default async function getApi(){
     try{
-        return await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
-        )
+        return await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`)
           .then((res) => res.json())
           .then((item) => {
             for (const res in item) {

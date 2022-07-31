@@ -20,7 +20,6 @@ async function getFunction() {
       <p class ="card-text">
       Y'all can find all the hot football news and videos
       </p>
-      <a href="#" class=" btn btn-danger">Press Me</a>
       </div>
     </div>
 
