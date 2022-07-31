@@ -21,7 +21,6 @@ getApi();
 
 const countDownDate = new Date("December 18, 2022 15:00:00").getTime();
 const myTimer = document.getElementById("timerDiv");
-
 const timer = setInterval(function () {
   let nowDate = new Date().getTime();
   let timeRemeins = countDownDate - nowDate;

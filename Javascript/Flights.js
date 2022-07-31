@@ -1,46 +1,84 @@
-let myArray;
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "f52cf79f95msh20f9ffa63e08f50p166bfdjsn244619f593a9",
-    "X-RapidAPI-Host": "madrid-barajas-airport-flights.p.rapidapi.com",
-  },
-};
+// let myArray;
 
-fetch(
-  "https://madrid-barajas-airport-flights.p.rapidapi.com/MAD/departures",
-  options
-)
-  .then((response) => response.json())
-  .then((response) => {
-    for (let i = 0; i < 9; i++) {
-      console.log(response[i]);
-      
-      flights.innerHTML += `
+
+  // const options = {
+  //   method: "GET",
+  //   headers: {
+  //     "X-RapidAPI-Key": "f52cf79f95msh20f9ffa63e08f50p166bfdjsn244619f593a9",
+  //     "X-RapidAPI-Host": "madrid-barajas-airport-flights.p.rapidapi.com",
+  //   },
+  // };
+
+  // fetch("https://madrid-barajas-airport-flights.p.rapidapi.com/MAD/departures",options)
+  //   .then((response) => response.json())
+  //   .then((item)=>console.log(item))
+  //   .catch((err) => console.error(err));
+
+
+
+async function getFlightsApi(){
+
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "f52cf79f95msh20f9ffa63e08f50p166bfdjsn244619f593a9",
+      "X-RapidAPI-Host": "madrid-barajas-airport-flights.p.rapidapi.com",
+    },
+  };
+  flight.innerHTML = "<img src='../Photos/Packages/loadinggif.gif'>";
+  try{
+    flightDiv.innerHTML = "<img src='../Photos/Packages/loadinggif.gif'>";
+    return await fetch("https://madrid-barajas-airport-flights.p.rapidapi.com/MAD/departures",options)
+      .then((res) => res.json())
+      .then((item) => {
+      for(let i=0;i<35;i++){
+        console.log(item[i]);
+         flights.innerHTML += `
         <div id="" class="card col-md-4 col-sm-12 d-flex justify-content-between  text-black text-center ">
         <div>
-            <img class="card-img" src="../Photos/Flights/airplainicon.jpg">
+        <img class="card-img" src="../Photos/Flights/airplainicon.jpg">
         </div>
-        
-            
-            <div>   ${response[i].destiny} </div>
+            <div>  ${item[i].destiny} </div>
+            <div> ${item[i].companyName}</div>
+            <div> ${item[i].date}</div>
+            <div>  ${item[i].origin}</div>
+            <div>  ${item[i].state}</div>
+            <div>  ${item[i].terminal}</div>
+            <div>  ${item[i].acronym}</div>
+        </div>`
+      }
+      
+      });
+  }
+  catch(err){
+    console.log(err);
+  }
+  finally{
+    flightDiv.innerHTML = "";
+  }
+}
+getFlightsApi();
 
-            <div>  ${response[i].companyName}</div>
 
-            <div> ${response[i].date}</div>
 
-            <div>  ${response[i].origin}</div>
+    // async function getFunction(){
 
-            <div>  ${response[i].state}</div>
+//   try{
+//     return await fetch("https://madrid-barajas-airport-flights.p.rapidapi.com/MAD/departures")
+//       .then((res) => res.json())
+//       .then((item) => {
 
-            <div>  ${response[i].terminal}</div>
+//       });
+//   }
+//   catch(err){
+//     console.log(err);
+//   }
+//   finally{
 
-            <div>  ${response[i].acronym}</div>
+//   }
 
-        </div>`;
-    }
-  })
-  .catch((err) => console.error(err));
+// }
+// getFunction()
 
 //   acronym: "IBE";
 //   airplaneType: "A332";
