@@ -1,11 +1,25 @@
 const API_KEY = "123cedf472ea7d740a81046892916adb";
-
+let some ; 
+let sun_img= `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`
 async function getApi(){
     try{
         return await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${40.456412891088995}&lon=${-3.6873697165230976}&appid=${API_KEY}`)
+          `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
+        )
           .then((res) => res.json())
-          .then((item) => console.log(item));
+          .then((item) => {
+            for (const res in item) {
+              some = Math.floor(item[res]["feels_like"] / 10);
+              // console.log(`${some}°C`);
+              switch (some) {
+                case some:
+                  document.getElementById("weather").innerHTML += `${some}°C ${sun_img}`;
+                  break;
+                default:
+                  break;
+              }
+            }
+          });
     }
     catch(err){
         console.log(err);
@@ -15,8 +29,10 @@ async function getApi(){
     }
 }
 getApi();
-
+-76.577862, 17.383380
 40.456412891088995, -3.6873697165230976;
+
+31.964827620018422, 34.887017936763236;
 
 
 const countDownDate = new Date("December 18, 2022 15:00:00").getTime();
@@ -39,3 +55,24 @@ const timer = setInterval(function () {
     document.getElementById("myTimer").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+// const API_KEY = "123cedf472ea7d740a81046892916adb";
+// let some;
+// async function getApi() {
+//   try {
+//     return await fetch(
+//       `https://api.openweathermap.org/data/2.5/weather?lat=${-76.577862}&lon=${17.38338}&appid=${API_KEY}`
+//     )
+//       .then((res) => res.json())
+//       .then((item) => {
+//         for (const res in item) {
+//           some = Math.floor(item[res]["feels_like"] / 10);
+//           document.getElementById("weather").innerHTML += `${some}°C`;
+//         }
+//       });
+//   } catch (err) {
+//     console.log(err);
+//   } finally {
+//   }
+// }
+// getApi();
