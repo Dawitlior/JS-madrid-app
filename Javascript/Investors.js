@@ -15,8 +15,7 @@ const iconsArray = [
 ];
 let counter = 0;
 async function getApi(){
-    loadingGif.innerHTML =
-      "<img class='justify-content-center' src='../Photos/Packages/loadinggif.gif'>";
+  loadingGif.innerHTML ="<div class='d-flex justify-content-center'> <img src='../Photos/Packages/loadinggif.gif'></div>";
     try{
         return await fetch("https://my-json-server.typicode.com/Jeck99/fake-server/users")
           .then((res) => res.json())
@@ -50,11 +49,10 @@ getApi();
 const API_KEY = "123cedf472ea7d740a81046892916adb";
 let temp;
 let sun_img0 = `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`;
-async function getApi() {
+
+async function getApi1() {
   try {
-    document.getElementById(
-      "invesGif"
-    ).innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
+    document.getElementById("invesGif").innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
     return await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
     )
@@ -80,4 +78,4 @@ async function getApi() {
     document.getElementById("invesGif").innerHTML = "";
   }
 }
-getApi();
+getApi1();
