@@ -33,18 +33,18 @@ async function getFlightsApi(){
       for(let i=0;i<35;i++){
         console.log(item[i]);
          flights.innerHTML += `
-        <div id="" class="card col-md-4 col-sm-12 d-flex justify-content-between  text-black text-center ">
+        <div id="" class="card col-md-4 col-sm-12 d-flex justify-content-between gap-3  text-black text-center ">
         <div>
         <img class="card-img" src="../Photos/Flights/airplainicon.jpg">
         </div>
-            <div>  ${item[i].destiny} </div>
-            <div> ${item[i].companyName}</div>
-            <div> ${item[i].date}</div>
-            <div>  ${item[i].origin}</div>
-            <div>  ${item[i].state}</div>
-            <div>  ${item[i].terminal}</div>
-            <div>  ${item[i].acronym}</div>
-        </div>`
+        <div> From : ${item[i].origin}</div>
+            <div> To : ${item[i].destiny} </div>
+            <div> company-name : ${item[i].companyName}</div>
+            <div> Date : ${item[i].date}</div>
+            <div> Terminal : ${item[i].terminal}</div>
+            <div> Acronym : ${item[i].acronym}</div>
+            <div> Time : ${item[i].estimadedhour}</div>
+        </div>`;
       }
       
       });
@@ -57,6 +57,43 @@ async function getFlightsApi(){
   }
 }
 getFlightsApi();
+
+
+const API_KEY = "123cedf472ea7d740a81046892916adb";
+let some11;
+let sun_img11 = `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`;
+async function getApi() {
+  try {
+    document.getElementById(
+      "flightsGif"
+    ).innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
+    return await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((item) => {
+        for (const res in item) {
+          some11 = Math.floor(item[res]["feels_like"] / 10);
+          // console.log(`${some}°C`);
+          switch (some11) {
+            case some11:
+              document.getElementById(
+                "flightsTemp"
+              ).innerHTML += `${some11}°C ${sun_img11}`;
+              break;
+            default:
+              break;
+          }
+        }
+      });
+  } catch (err) {
+    console.log(err);
+  } finally {
+    document.getElementById("flightsGif").innerHTML = "";
+  }
+}
+getApi();
+
 
 
 

@@ -45,4 +45,39 @@ async function getApi(){
         loadingGif.innerHTML = ""
     }
 }
-getApi()
+getApi();
+
+const API_KEY = "123cedf472ea7d740a81046892916adb";
+let temp;
+let sun_img0 = `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`;
+async function getApi() {
+  try {
+    document.getElementById(
+      "invesGif"
+    ).innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
+    return await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((item) => {
+        for (const res in item) {
+          temp = Math.floor(item[res]["feels_like"] / 10);
+          // console.log(`${some}°C`);
+          switch (temp) {
+            case temp:
+              document.getElementById(
+                "tempPic"
+              ).innerHTML += `${temp}°C ${sun_img0}`;
+              break;
+            default:
+              break;
+          }
+        }
+      });
+  } catch (err) {
+    console.log(err);
+  } finally {
+    document.getElementById("invesGif").innerHTML = "";
+  }
+}
+getApi();

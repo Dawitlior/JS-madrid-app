@@ -1,8 +1,9 @@
 const API_KEY = "123cedf472ea7d740a81046892916adb";
 let some ; 
 let sun_img= `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`
-export default async function getApi(){
+async function getApi(){
     try{
+      document.getElementById("firstWeather").innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
         return await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`)
           .then((res) => res.json())
           .then((item) => {
@@ -23,14 +24,10 @@ export default async function getApi(){
         console.log(err);
     }
     finally{
-
+      document.getElementById("firstWeather").innerHTML = "" 
     }
 }
 getApi();
--76.577862, 17.383380
-40.456412891088995, -3.6873697165230976;
-
-31.964827620018422, 34.887017936763236;
 
 
 const countDownDate = new Date("December 18, 2022 15:00:00").getTime();
