@@ -8,7 +8,8 @@ async function getFunction() {
     },
   };
   try {
-    waitingGif.innerHTML = "<div class='d-flex justify-content-center'> <img src='../Photos/Packages/loadinggif.gif'> </div>";
+    waitingGif.innerHTML = 
+    "<div class='d-flex justify-content-center'> <img src='../Photos/Packages/loadinggif.gif'> </div>";
     return await fetch("https://free-football-soccer-videos.p.rapidapi.com/",options)
       .then((response) => response.json())
       .then((response) => {
@@ -38,7 +39,7 @@ getFunction();
 
 const API_KEY = "123cedf472ea7d740a81046892916adb";
 let some;
-let sun_img = `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`;
+let sun_img = `<img style="width:2vw;" src="./Photos/Home/sun.png" alt=""/>`;
 async function getApi() {
   try {
     return await fetch(
