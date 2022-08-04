@@ -1,6 +1,6 @@
 const API_KEY = "123cedf472ea7d740a81046892916adb";
 let some ; 
-let sun_img= `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`
+let sun_img= `<img style="width:2vw;" src="./Photos/Home/sun.png" alt=""/>`
 async function getApi(){
     try{
       document.getElementById("firstWeather").innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
