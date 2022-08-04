@@ -1,6 +1,8 @@
 const API_KEY = "123cedf472ea7d740a81046892916adb";
 let some ; 
 let sun_img= `<img style="width:2vw;" src="./Photos/Home/sun.png" alt=""/>`
+const myTimer = document.getElementById("timerDiv");
+const countDownDate = new Date("December 18, 2022 15:00:00").getTime();
 async function getApi(){
     try{
       document.getElementById("firstWeather").innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
@@ -29,9 +31,6 @@ async function getApi(){
 }
 getApi();
 
-
-const countDownDate = new Date("December 18, 2022 15:00:00").getTime();
-const myTimer = document.getElementById("timerDiv");
 const timer = setInterval(function () {
   let nowDate = new Date().getTime();
   let timeRemeins = countDownDate - nowDate;
