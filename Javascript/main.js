@@ -6,15 +6,19 @@ const countDownDate = new Date("December 18, 2022 15:00:00").getTime();
 async function getApi(){
     try{
       document.getElementById("firstWeather").innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
-        return await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`)
+        return await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${40.416775}&lon=${-3.703790}&appid=${API_KEY}`
+        )
           .then((res) => res.json())
           .then((item) => {
             for (const res in item) {
-              some = Math.floor(item[res]["feels_like"] / 10);
+              some = Math.floor(item[res]["feels_like"] / 9);
               // console.log(`${some}°C`);
               switch (some) {
                 case some:
-                  document.getElementById("weather").innerHTML += `${some}°C ${sun_img}`;
+                  document.getElementById(
+                    "weather"
+                  ).innerHTML += `${some}°C ${sun_img}`;
                   break;
                 default:
                   break;
