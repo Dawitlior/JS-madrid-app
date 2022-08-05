@@ -61,7 +61,7 @@ getFlightsApi();
 
 const API_KEY = "123cedf472ea7d740a81046892916adb";
 let some11;
-let sun_img11 = `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`;
+let sun_img11 = `<img style="width:2vw;" src="../Photos/Home/sun.png" alt=""/>`;
 async function getApi() {
   try {
     document.getElementById(
