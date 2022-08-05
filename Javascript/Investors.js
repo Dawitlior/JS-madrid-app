@@ -24,13 +24,13 @@ async function getApi(){
                  investorsDiv.innerHTML += `<div class="card col-sm-12 col-lg-4 align-items-center mt-5 ">
             <img src="${iconsArray[counter++]}" class="card-img-top"
              <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p>${element._id}</p>
-            <p>${element.age}</p>
-            <p>${element.name.last}</p>
+            <h5 class="card-title"></h5>
             <p>${element.name.first}</p>
+            <p>${element.name.last}</p>
+            <p>${element.age}</p>
             <p>${element.phone}</p>
             <p>${element.email}</p>
+            <p>${element._id}</p>
              </div>
             </div>`;
             });
