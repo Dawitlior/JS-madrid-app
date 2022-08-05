@@ -9,7 +9,7 @@ async function getFunction() {
   };
   try {
     waitingGif.innerHTML = 
-    "<div class='d-flex justify-content-center'> <img src='../Photos/Packages/loadinggif.gif'> </div>";
+    "<div class='d-flex justify-content-center'> <img src='../Photos/Global-news/loadinggif.gif'> </div>";
     return await fetch("https://free-football-soccer-videos.p.rapidapi.com/",options)
       .then((response) => response.json())
       .then((response) => {

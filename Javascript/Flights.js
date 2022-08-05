@@ -26,7 +26,7 @@ async function getFlightsApi(){
     },
   };
   try{
-    flightDiv.innerHTML = "<img src='../Photos/Packages/loadinggif.gif'>";
+    flightDiv.innerHTML = "<img src='../Photos/Global-news/loadinggif.gif'>";
     return await fetch("https://madrid-barajas-airport-flights.p.rapidapi.com/MAD/departures",options)
       .then((res) => res.json())
       .then((item) => {

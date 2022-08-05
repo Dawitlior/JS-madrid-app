@@ -4,11 +4,7 @@ async function getFunction(){
           "https://api-football-standings.azharimm.site/leagues/esp.1/standings?season=2021&sort=asc"
         )
           .then((res) => res.json())
-          .then((item) => {
-            for(let key in item){
-               console.log(item[key]); 
-            }
-          });
+         
     }
     catch(err){
         console.log(err);
@@ -19,6 +15,16 @@ async function getFunction(){
 }
 getFunction();
 
+function postFunction(){
+  getFunction().then((item)=>{
+     .then((item) => {
+            for(let key in item){
+               console.log(item[key]); 
+            }
+          });
+  })
+}
+
 class Statistic{
 constructor(wins,losses,ties,gamesPlayed,points){
     this.wins = wins;
@@ -28,4 +34,5 @@ constructor(wins,losses,ties,gamesPlayed,points){
     this.points = points;
 }
 }
+
 

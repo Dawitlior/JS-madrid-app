@@ -1,6 +1,8 @@
 // import getApi from "./main";
 // console.log(getApi());
-
+const API_KEY = "123cedf472ea7d740a81046892916adb";
+let temp;
+let sun_img0 = `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`;
 const iconsArray = [
   "../Photos/Investors/image3.png",
   "../Photos/Investors/image4.png",
@@ -14,14 +16,26 @@ const iconsArray = [
   "../Photos/Investors/image10.png",
 ];
 let counter = 0;
+
 async function getApi(){
-  loadingGif.innerHTML ="<div class='d-flex justify-content-center'> <img src='../Photos/Packages/loadinggif.gif'></div>";
+  loadingGif.innerHTML ="<div class='d-flex justify-content-center'> <img src='../Photos/Global-news/loadinggif.gif'></div>";
     try{
         return await fetch("https://my-json-server.typicode.com/Jeck99/fake-server/users")
           .then((res) => res.json())
-          .then((item) => {
-            item.forEach(element => {
-                 investorsDiv.innerHTML += `<div class="card col-sm-12 col-lg-4 align-items-center mt-5 ">
+    }
+    catch(err){
+        console.log(err);
+    }
+    finally{
+        loadingGif.innerHTML = ""
+    }
+}
+getApi();
+
+function postApi(){
+  getApi().then((item) => {
+    item.forEach((element) => {
+      investorsDiv.innerHTML += `<div class="card col-sm-12 col-lg-4 align-items-center mt-5 ">
             <img src="${iconsArray[counter++]}" class="card-img-top"
              <div class="card-body">
             <h5 class="card-title"></h5>
@@ -33,22 +47,11 @@ async function getApi(){
             <p>${element._id}</p>
              </div>
             </div>`;
-            });
-           
-          })
-    }
-    catch(err){
-        console.log(err);
-    }
-    finally{
-        loadingGif.innerHTML = ""
-    }
+    });
+  });
 }
-getApi();
+postApi()
 
-const API_KEY = "123cedf472ea7d740a81046892916adb";
-let temp;
-let sun_img0 = `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`;
 
 async function getApi1() {
   try {
@@ -57,21 +60,7 @@ async function getApi1() {
       `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
     )
       .then((res) => res.json())
-      .then((item) => {
-        for (const res in item) {
-          temp = Math.floor(item[res]["feels_like"] / 10);
-          // console.log(`${some}°C`);
-          switch (temp) {
-            case temp:
-              document.getElementById(
-                "tempPic"
-              ).innerHTML += `${temp}°C ${sun_img0}`;
-              break;
-            default:
-              break;
-          }
-        }
-      });
+  
   } catch (err) {
     console.log(err);
   } finally {
@@ -79,3 +68,22 @@ async function getApi1() {
   }
 }
 getApi1();
+
+function postApi1(){
+  getApi1().then((item) => {
+    for (const res in item) {
+      temp = Math.floor(item[res]["feels_like"] / 10);
+      // console.log(`${some}°C`);
+      switch (temp) {
+        case temp:
+          document.getElementById(
+            "tempPic"
+          ).innerHTML += `${temp}°C ${sun_img0}`;
+          break;
+        default:
+          break;
+      }
+    }
+  });
+}
+postApi1();
