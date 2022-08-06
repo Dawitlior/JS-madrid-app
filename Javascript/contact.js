@@ -1,6 +1,6 @@
 const API_KEY = "123cedf472ea7d740a81046892916adb";
 let temp1;
-let sun_img01 = `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`;
+let sun_img01 = `<img style="width:2vw;" src="../Photos/Home/sun.png" alt=""/>`;
 async function getApiWetherContact() {
   try {
     document.getElementById(

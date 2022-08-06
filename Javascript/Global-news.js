@@ -1,5 +1,9 @@
+const API_KEY = "123cedf472ea7d740a81046892916adb";
+let some;
+let sun_img = `<img style="width:2vw;" src="../Photos/Home/sun.png" alt=""/>`;
 let myDiv = document.getElementById("cardDiv");
-async function getFunction() {
+
+async function getNewsApi() {
   const options = {
     method: "GET",
     headers: {
@@ -11,10 +15,22 @@ async function getFunction() {
     waitingGif.innerHTML = 
     "<div class='d-flex justify-content-center'> <img src='../Photos/Global-news/loadinggif.gif'> </div>";
     return await fetch("https://free-football-soccer-videos.p.rapidapi.com/",options)
-      .then((response) => response.json())
-      .then((response) => {
-      for (let i = 0; i < 50; i++) {
-       myDiv.innerHTML += `<div class="card col-sm-12 col-lg-4 justify-content-center mt-5 ">
+      .then((response) => response.json());
+      
+  } 
+  catch (err) {
+    console.log(err);
+  } 
+  finally {
+     waitingGif.innerHTML = ""
+  }
+}
+getNewsApi();
+
+function postNewsApi(){
+getNewsApi().then((response) => {
+  for (let i = 0; i < 40; i++) {
+    myDiv.innerHTML += `<div class="card col-sm-12 col-lg-4 justify-content-center mt-5 ">
       ${response[i]["videos"][0]["embed"]}
       <h5 class ="card-title">${response[i]["title"]}</h5>
       <div class="card-body">
@@ -24,48 +40,41 @@ async function getFunction() {
       </div>
     </div>
       `;
-        }
-      });
-  } 
-  catch (err) {
-    console.log(err);
-  } 
-  finally {
-     waitingGif.innerHTML = ""
   }
+});
 }
-getFunction();
+postNewsApi();
 
-const API_KEY = "123cedf472ea7d740a81046892916adb";
-let some;
-let sun_img = `<img style="width:2vw;" src="./Photos/Home/sun.png" alt=""/>`;
-async function getApi() {
+
+async function getApiNewsWether() {
   try {
     return await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
     )
-      .then((res) => res.json())
-      .then((item) => {
-        for (const res in item) {
-          some = Math.floor(item[res]["feels_like"] / 10);
-          // console.log(`${some}°C`);
-          switch (some) {
-            case some:
-              document.getElementById(
-                "weather1"
-              ).innerHTML += `${some}°C ${sun_img}`;
-              break;
-            default:
-              break;
-          }
-        }
-      });
+      .then((res) => res.json()); 
   } catch (err) {
     console.log(err);
   } finally {
   }
 }
-getApi();
+getApiNewsWether();
+
+function postApiNewsWether(){
+getApiNewsWether().then((item) => {
+  for (const res in item) {
+    some = Math.floor(item[res]["feels_like"] / 10);
+    // console.log(`${some}°C`);
+    switch (some) {
+      case some:
+        document.getElementById("weather1").innerHTML += `${some}°C ${sun_img}`;
+        break;
+      default:
+        break;
+    }
+  }
+});
+}
+postApiNewsWether()
 
 // let myDiv = document.getElementById("cardDiv");
 

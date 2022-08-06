@@ -69,6 +69,7 @@ async function getApiWetherInvestors() {
 }
 getApiWetherInvestors();
 
+
 function postApiWetherInvestors(){
   getApiWetherInvestors().then((item) => {
     for (const res in item) {
