@@ -17,7 +17,7 @@ const iconsArray = [
 ];
 let counter = 0;
 
-async function getApi(){
+async function getApiInvestors(){
   loadingGif.innerHTML ="<div class='d-flex justify-content-center'> <img src='../Photos/Global-news/loadinggif.gif'></div>";
     try{
         return await fetch("https://my-json-server.typicode.com/Jeck99/fake-server/users")
@@ -30,10 +30,10 @@ async function getApi(){
         loadingGif.innerHTML = ""
     }
 }
-getApi();
+getApiInvestors();
 
-function postApi(){
-  getApi().then((item) => {
+function postApiInvestors() {
+  getApiInvestors().then((item) => {
     item.forEach((element) => {
       investorsDiv.innerHTML += `<div class="card col-sm-12 col-lg-4 align-items-center mt-5 ">
             <img src="${iconsArray[counter++]}" class="card-img-top"
@@ -50,10 +50,10 @@ function postApi(){
     });
   });
 }
-postApi()
+postApiInvestors();
 
 
-async function getApi1() {
+async function getApiWetherInvestors() {
   try {
     document.getElementById("invesGif").innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
     return await fetch(
@@ -67,12 +67,12 @@ async function getApi1() {
     document.getElementById("invesGif").innerHTML = "";
   }
 }
-getApi1();
+getApiWetherInvestors();
 
-function postApi1(){
-  getApi1().then((item) => {
+function postApiWetherInvestors(){
+  getApiWetherInvestors().then((item) => {
     for (const res in item) {
-      temp = Math.floor(item[res]["feels_like"] / 10);
+      temp = Math.floor(item[res]["feels_like"] / 9);
       // console.log(`${some}°C`);
       switch (temp) {
         case temp:
@@ -86,4 +86,4 @@ function postApi1(){
     }
   });
 }
-postApi1();
+postApiWetherInvestors();

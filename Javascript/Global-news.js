@@ -23,7 +23,6 @@ async function getFunction() {
       </p>
       </div>
     </div>
-
       `;
         }
       });

@@ -14,6 +14,9 @@
   //   .then((item)=>console.log(item))
   //   .catch((err) => console.error(err));
 
+const API_KEY = "123cedf472ea7d740a81046892916adb";
+let some11;
+let sun_img11 = `<img style="width:2vw;" src="../Photos/Home/sun.png" alt=""/>`;
 
 
 async function getFlightsApi(){
@@ -26,13 +29,24 @@ async function getFlightsApi(){
     },
   };
   try{
-    flightDiv.innerHTML = "<img src='../Photos/Global-news/loadinggif.gif'>";
+    flightDiv.innerHTML = "<img src='../Photos/Flights/airplain.gif'>";
     return await fetch("https://madrid-barajas-airport-flights.p.rapidapi.com/MAD/departures",options)
-      .then((res) => res.json())
-      .then((item) => {
-      for(let i=0;i<35;i++){
-        console.log(item[i]);
-         flights.innerHTML += `
+      .then((res) => res.json());
+  }
+  catch(err){
+    console.log(err);
+  }
+  finally{
+    flightDiv.innerHTML = "";
+  }
+}
+getFlightsApi();
+
+function postFlightsApi(){
+getFlightsApi().then((item) => {
+  for (let i = 0; i < 35; i++) {
+    console.log(item[i]);
+    flights.innerHTML += `
         <div id="" class="card col-md-4 col-sm-12 d-flex justify-content-between gap-3  text-black text-center ">
         <div>
         <img class="card-img" src="../Photos/Flights/airplainicon.jpg">
@@ -45,24 +59,14 @@ async function getFlightsApi(){
             <div> Acronym : ${item[i].acronym}</div>
             <div> Time : ${item[i].estimadedhour}</div>
         </div>`;
-      }
-      
-      });
   }
-  catch(err){
-    console.log(err);
-  }
-  finally{
-    flightDiv.innerHTML = "";
-  }
+});
+
 }
-getFlightsApi();
+postFlightsApi();
 
 
-const API_KEY = "123cedf472ea7d740a81046892916adb";
-let some11;
-let sun_img11 = `<img style="width:2vw;" src="../Photos/Home/sun.png" alt=""/>`;
-async function getApi() {
+async function getApiWetherFlights() {
   try {
     document.getElementById(
       "flightsGif"
@@ -70,29 +74,34 @@ async function getApi() {
     return await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
     )
-      .then((res) => res.json())
-      .then((item) => {
-        for (const res in item) {
-          some11 = Math.floor(item[res]["feels_like"] / 10);
-          // console.log(`${some}°C`);
-          switch (some11) {
-            case some11:
-              document.getElementById(
-                "flightsTemp"
-              ).innerHTML += `${some11}°C ${sun_img11}`;
-              break;
-            default:
-              break;
-          }
-        }
-      });
+      .then((res) => res.json());
+
   } catch (err) {
     console.log(err);
   } finally {
     document.getElementById("flightsGif").innerHTML = "";
   }
 }
-getApi();
+getApiWetherFlights();
+
+function postApiWetherFlights(){
+getApiWetherFlights().then((item) => {
+  for (const res in item) {
+    some11 = Math.floor(item[res]["feels_like"] / 9);
+    // console.log(`${some}°C`);
+    switch (some11) {
+      case some11:
+        document.getElementById(
+          "flightsTemp"
+        ).innerHTML += `${some11}°C ${sun_img11}`;
+        break;
+      default:
+        break;
+    }
+  }
+});
+}
+postApiWetherFlights()
 
 
 
