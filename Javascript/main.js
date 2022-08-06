@@ -5,7 +5,9 @@ const myTimer = document.getElementById("timerDiv");
 const countDownDate = new Date("December 18, 2022 15:00:00").getTime();
 async function getApiWether(){
     try{
-      document.getElementById("firstWeather").innerHTML = `<img style="width:2vw;" src="../Photos/Packages/loadinggif.gif" alt=""/>`;
+      document.getElementById(
+        "firstWeather"
+      ).innerHTML = `<img style="width:2vw;" src="../Photos/Global-news/loadinggif.gif" alt=""/>`;
         return await fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${40.416775}&lon=${-3.703790}&appid=${API_KEY}`
         )

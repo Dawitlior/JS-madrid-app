@@ -35,7 +35,7 @@ getNewsApi().then((response) => {
       <h5 class ="card-title">${response[i]["title"]}</h5>
       <div class="card-body">
       <p class ="card-text">
-      Y'all can find all the hot football news and videos
+      All the hottest football news in the world on our app 
       </p>
       </div>
     </div>
@@ -44,6 +44,7 @@ getNewsApi().then((response) => {
 });
 }
 postNewsApi();
+
 
 
 async function getApiNewsWether() {
