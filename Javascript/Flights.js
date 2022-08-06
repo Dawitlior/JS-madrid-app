@@ -29,7 +29,8 @@ async function getFlightsApi(){
     },
   };
   try{
-    flightDiv.innerHTML = "<img src='../Photos/Flights/airplain.gif'>";
+    flightDiv.innerHTML =
+      "<img style='width:75vw' src='../Photos/Flights/airplain.gif'>";
     return await fetch("https://madrid-barajas-airport-flights.p.rapidapi.com/MAD/departures",options)
       .then((res) => res.json());
   }
