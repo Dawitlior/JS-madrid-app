@@ -16,13 +16,11 @@ async function getFunction(){
 getFunction();
 
 function postFunction(){
-  getFunction().then((item)=>{
-     .then((item) => {
+  getFunction().then((item) => {
             for(let key in item){
                console.log(item[key]); 
             }
-          });
-  })
+    });
 }
 
 class Statistic{
