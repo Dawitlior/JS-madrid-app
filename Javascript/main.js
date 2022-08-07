@@ -51,7 +51,6 @@ const timer = setInterval(function () {
    <h2 class="text-center " >Next Match:  Days: ${days}| Hrs: ${hours}| Min: ${minutes}| Sec:${seconds}</h2>
    </div>`;
    
-
   if (timeRemeins < 0) {
     clearInterval(timer);
     document.getElementById("myTimer").innerHTML = "EXPIRED";
