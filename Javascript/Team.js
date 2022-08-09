@@ -26,18 +26,33 @@ async function getFunction() {
 }
 getFunction();
 
-function postFunction() {
-  getFunction().then((item) => {
-    // for (let key in item) {
-    //   console.log(item[key]["standings"]);
-    //   // show.wins = ;
-    // }  
-    for(let i = 0 ; i<1 ; i++){
-      console.log(item["data"]["standings"]["0"]["stats"]["0"]);
-    }
-  })
-}
-postFunction();
+
+
+// function displayTwenty() {
+// const ArrayOptions = Array.from(document.getElementsByClassName('objTwnty'))
+// const optionA = document.getElementById("optionTwenty");
+// console.log(ArrayOptions);
+//   getFunction().then((item) => {
+//     // for (let key in item) {
+//     //   console.log(item[key]["standings"]);
+//     //   // show.wins = ;
+//     // }  
+//     for(let i = 0 ; i<1 ; i++){
+//       let myStateDiv = document.getElementById("statsDiv");
+//       myStateDiv.innerHTML=item["data"]["standings"]["0"]["stats"]["12"];
+//       switch (ArrayOptions) {
+//         case optionA:
+//           displayTwenty()
+//           break;
+
+//         default:
+//           break;
+//       }
+
+//     }
+//   })
+// }
+
 
 async function getApiWetherTeam() {
   try {
@@ -428,6 +443,8 @@ return (myMainDiv.innerHTML = `
               from the 14th century to the beginning of the 19th century.
           </p>
         </div>
+
+
 
   `);
 }

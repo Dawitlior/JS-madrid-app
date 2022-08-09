@@ -42,8 +42,8 @@ postApiWether();
 const timer = setInterval(function () {
   let nowDate = new Date().getTime();
   let timeRemeins = countDownDate - nowDate;
-  let days = Math.floor(timeRemeins / (1000 * 60 * 60 * 400));
-  let hours = Math.floor((timeRemeins % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let days = Math.floor(timeRemeins / (1000 * 100 * 100 * 600));
+  let hours = Math.floor((timeRemeins % (600 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((timeRemeins % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((timeRemeins % (1000 * 60)) / 1000);
 

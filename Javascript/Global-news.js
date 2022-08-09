@@ -46,7 +46,6 @@ getNewsApi().then((response) => {
 postNewsApi();
 
 
-
 async function getApiNewsWether() {
   try {
     return await fetch(
@@ -63,7 +62,7 @@ getApiNewsWether();
 function postApiNewsWether(){
 getApiNewsWether().then((item) => {
   for (const res in item) {
-    some = Math.floor(item[res]["feels_like"] / 10);
+    some = Math.floor(item[res]["feels_like"] / 9);
     // console.log(`${some}°C`);
     switch (some) {
       case some:
@@ -76,6 +75,7 @@ getApiNewsWether().then((item) => {
 });
 }
 postApiNewsWether()
+
 
 // let myDiv = document.getElementById("cardDiv");
 
