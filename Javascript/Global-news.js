@@ -29,7 +29,7 @@ getNewsApi();
 
 function postNewsApi(){
 getNewsApi().then((response) => {
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 50; i++) {
     myDiv.innerHTML += `<div class="card col-sm-12 col-lg-4 justify-content-center mt-5 ">
       ${response[i]["videos"][0]["embed"]}
       <h5 class ="card-title">${response[i]["title"]}</h5>
