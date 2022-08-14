@@ -1,7 +1,7 @@
 const API_KEY = "123cedf472ea7d740a81046892916adb";
 let temp2;
 let sun_img011 = `<img style="width:2vw;" src="/Photos/Home/sun.png" alt=""/>`;
-
+const MY_API = "https://my-json-server.typicode.com/Dawitlior/my-json/hotels";
 
 class Statistic {
   constructor(wins, losses, ties, gamesPlayed, points) {
@@ -449,3 +449,21 @@ return (myMainDiv.innerHTML = `
   `);
 }
 printAllPlayersDetails();
+
+async function getHotelsApi(){
+  try{
+    return await fetch(MY_API)
+    .then((res)=>res.json())
+  }
+  catch(err){
+    console.log(err);
+  }
+  finally{
+
+  }
+}
+
+function postMyApi(){
+getHotelsApi().then((item)=>console.log(item))
+}
+postMyApi();
