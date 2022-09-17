@@ -1,109 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-     <nav class="navbar navbar-expand-sm bg-white navbar-dark fixed-top ">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-white navbar-dark fixed-top">
       <a class="navbar-brand text-black" href="../index.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
         <span class="navbar-toggler-icon bg-dark"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ">
-          <li class="nav-item ">
-            <a class="nav-link text-black" href="../Pages/Flights.html">Flights</a>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-black" href="../Pages/Flights.html"
+              >Flights</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link text-black" href="../Pages/Global-news.html">Global-news</a>
+            <a class="nav-link text-black" href="../Pages/Global-news.html"
+              >Global-news</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link text-black" href="../Pages/about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-black" href="../Pages/Investors.html">Investors</a>
+            <a class="nav-link text-black" href="../Pages/Investors.html"
+              >Investors</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link text-black" href="../Pages/Team.html">Team</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-black" href="../Pages/Contact.html">Contact</a>
+            <a class="nav-link text-black" href="../Pages/Contact.html"
+              >Contact</a
+            >
           </li>
         </ul>
-        <div id="contactGif" class="nav-item">
-
-        </div>
-        <div id="contactTemp" class="nav-item px-3">
-
-        </div>
+        <div id="contactGif" class="nav-item"></div>
+        <div id="contactTemp" class="nav-item px-3"></div>
       </div>
     </nav>
 
-    <div id="contactDiv" class="container text-center mb-4 text-black mt-5 mt-5">
-        <h1 class="h1 text-black mb-3 mt-5">Contact</h1>
-        <p class="text-black">
-          Email us with any questions or inquiries or call 0542653154.
-          <br />
-          I would be happy to answer your question and feedback.
-        </p>
+    <div
+      id="contactDiv"
+      class="container text-center mb-4 text-black mt-5 mt-5"
+    >
+      <h1 class="h1 text-black mb-3 mt-5">Contact</h1>
+      <p class="text-black">
+        Email us with any questions or inquiries or call 0542653154.
+        <br />
+        I would be happy to answer your question and feedback.
+      </p>
 
-        <form class="row justify-content-center">
-          <div class="row justify-content-center">
-            <div class="col-md-3">
-              <label for="firstname" class="form-label"> </label>
-              <input
-                type="text"
-                class="form-control text-center"
-                id="firstname"
-                placeholder="First Name"
-                required
-              />
-            </div>
-            <div class="col-sm col-md-3">
-              <label for="lastname" class="form-label"> </label>
-              <input type="text" class="form-control text-center text-black" id="lastname" placeholder="Last Name" required/>
-            </div>
+      <form class="row justify-content-center">
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <label for="firstname" class="form-label"> </label>
+            <input
+              type="text"
+              class="form-control text-center"
+              id="firstname"
+              placeholder="First Name"
+              required
+            />
+          </div>
+          <div class="col-sm col-md-3">
+            <label for="lastname" class="form-label"> </label>
+            <input
+              type="text"
+              class="form-control text-center text-black"
+              id="lastname"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <label for="email" class="form-label"> </label>
+            <input
+              type="email"
+              class="form-control text-center"
+              id="email"
+              placeholder=" Email@gmail.com"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <label for="phoneNumber" class="form-label"> </label>
+            <input
+              type="tel"
+              class="form-control text-center"
+              id="phoneNumber"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-2">
+          <div class="col-sm-1 col-md-6">
+            <label for="comment" class="form-label"> </label>
+            <textarea
+              name="comment"
+              class="form-control text-center"
+              id="comment"
+              cols="50"
+              rows="10"
+              placeholder="Comments, Questions?"
+              required
+            ></textarea>
           </div>
 
-          <div class="row justify-content-center">
+          <div class="row mt-5 mb-5 justify-content-center">
             <div class="col-md-6">
-              <label for="email" class="form-label"> </label>
-              <input type="email" class="form-control text-center" id="email" placeholder=" Email@gmail.com" required/>
+              <a href=""
+                ><button type="submit" class="btn btn-danger">SEND</button></a
+              >
             </div>
           </div>
-
-          <div class="row justify-content-center">
-            <div class="col-md-6">
-              <label for="phoneNumber" class="form-label"> </label>
-              <input type="tel" class="form-control text-center" id="phoneNumber" placeholder="Phone Number" required/>
-            </div>
-          </div>
-
-          <div class="row justify-content-center mt-2">
-            <div class="col-sm-1 col-md-6">
-              <label for="comment" class="form-label"> </label>
-              <textarea name="comment" class="form-control text-center" id="comment" cols="50" rows="10" placeholder="Comments, Questions?" required></textarea>
-            </div>
-
-            <div class="row mt-5 mb-5 justify-content-center">
-              <div class="col-md-6">
-                <a href=""><button type="submit" class="btn btn-danger">SEND</button></a>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
+    </div>
 
     <footer class="text-center text-lg-start bg-light text-muted mb-0">
       <section
-        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
         <div class="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>
         </div>
@@ -145,13 +191,23 @@
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
               <p>
-                <a href="https://www.facebook.com/lior.dawit.5" class="text-reset">Facebook</a>
+                <a
+                  href="https://www.facebook.com/lior.dawit.5"
+                  class="text-reset"
+                  >Facebook</a
+                >
               </p>
               <p>
-                <a href="https://github.com/Dawitlior" class="text-reset">Githube</a>
+                <a href="https://github.com/Dawitlior" class="text-reset"
+                  >Githube</a
+                >
               </p>
               <p>
-                <a href="https://www.linkedin.com/in/lior-dawit-07464b236/" class="text-reset">Linkdin</a>
+                <a
+                  href="https://www.linkedin.com/in/lior-dawit-07464b236/"
+                  class="text-reset"
+                  >Linkdin</a
+                >
               </p>
             </div>
             <!-- Grid column -->
@@ -176,10 +232,16 @@
       <!-- Section: Links  -->
 
       <!-- Copyright -->
-      <div class="text-center p-4 " style="background-color: rgba(0, 0, 0, 0.05)">© 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">SeniorDawit.com</a>
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+          >SeniorDawit.com</a
+        >
       </div>
     </footer>
     <script src="/Javascript/contact.js"></script>
-</body>
+  </body>
 </html>

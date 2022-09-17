@@ -8,9 +8,7 @@ async function getApiWetherContact() {
     ).innerHTML = `<img style="width:2vw;" src="../Photos/Global-news/loadinggif.gif" alt=""/>`;
     return await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
-    )
-      .then((res) => res.json());
-      
+    ).then((res) => res.json());
   } catch (err) {
     console.log(err);
   } finally {
@@ -19,23 +17,21 @@ async function getApiWetherContact() {
 }
 getApiWetherContact();
 
-function postApiWetherContact(){
-getApiWetherContact().then((item) => {
-  for (const res in item) {
-    temp1 = Math.floor(item[res]["feels_like"] / 9);
-    // console.log(`${some}°C`);
-    switch (temp1) {
-      case temp1:
-        document.getElementById(
-          "contactTemp"
-        ).innerHTML += `${temp1}°C ${sun_img01}`;
-        break;
-      default:
-        break;
+function postApiWetherContact() {
+  getApiWetherContact().then((item) => {
+    for (const res in item) {
+      temp1 = Math.floor(item[res]["feels_like"] / 9);
+      // console.log(`${some}°C`);
+      switch (temp1) {
+        case temp1:
+          document.getElementById(
+            "contactTemp"
+          ).innerHTML += `${temp1}°C ${sun_img01}`;
+          break;
+        default:
+          break;
+      }
     }
-  }
-});
+  });
 }
 postApiWetherContact();
-
-

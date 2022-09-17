@@ -26,8 +26,6 @@ async function getFunction() {
 }
 getFunction();
 
-
-
 // function displayTwenty() {
 // const ArrayOptions = Array.from(document.getElementsByClassName('objTwnty'))
 // const optionA = document.getElementById("optionTwenty");
@@ -36,7 +34,7 @@ getFunction();
 //     // for (let key in item) {
 //     //   console.log(item[key]["standings"]);
 //     //   // show.wins = ;
-//     // }  
+//     // }
 //     for(let i = 0 ; i<1 ; i++){
 //       let myStateDiv = document.getElementById("statsDiv");
 //       myStateDiv.innerHTML=item["data"]["standings"]["0"]["stats"]["12"];
@@ -52,7 +50,6 @@ getFunction();
 //     }
 //   })
 // }
-
 
 async function getApiWetherTeam() {
   try {
@@ -89,10 +86,9 @@ function postApiWetherTeam() {
 }
 postApiWetherTeam();
 
-
-function printAllPlayersDetails(){
-let myMainDiv = document.getElementById("teamDiv");
-return (myMainDiv.innerHTML = `
+function printAllPlayersDetails() {
+  let myMainDiv = document.getElementById("teamDiv");
+  return (myMainDiv.innerHTML = `
    
         <div class="col-10 col-sm-8 col-lg-6">
           <img src="../Photos/Team/COURTOIS_1.jpg" loading="lazy" class="d-block mx-lg-auto img-fluid"/>
@@ -450,20 +446,16 @@ return (myMainDiv.innerHTML = `
 }
 printAllPlayersDetails();
 
-async function getHotelsApi(){
-  try{
-    return await fetch(MY_API)
-    .then((res)=>res.json())
-  }
-  catch(err){
+async function getHotelsApi() {
+  try {
+    return await fetch(MY_API).then((res) => res.json());
+  } catch (err) {
     console.log(err);
-  }
-  finally{
-
+  } finally {
   }
 }
 
-function postMyApi(){
-getHotelsApi().then((item)=>console.log(item))
+function postMyApi() {
+  getHotelsApi().then((item) => console.log(item));
 }
 postMyApi();

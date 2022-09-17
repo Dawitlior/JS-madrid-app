@@ -12,25 +12,24 @@ async function getNewsApi() {
     },
   };
   try {
-    waitingGif.innerHTML = 
-    "<div class='d-flex justify-content-center'> <img src='../Photos/Global-news/loadinggif.gif'> </div>";
-    return await fetch("https://free-football-soccer-videos.p.rapidapi.com/",options)
-      .then((response) => response.json());
-      
-  } 
-  catch (err) {
+    waitingGif.innerHTML =
+      "<div class='d-flex justify-content-center'> <img src='../Photos/Global-news/loadinggif.gif'> </div>";
+    return await fetch(
+      "https://free-football-soccer-videos.p.rapidapi.com/",
+      options
+    ).then((response) => response.json());
+  } catch (err) {
     console.log(err);
-  } 
-  finally {
-     waitingGif.innerHTML = ""
+  } finally {
+    waitingGif.innerHTML = "";
   }
 }
 getNewsApi();
 
-function postNewsApi(){
-getNewsApi().then((response) => {
-  for (let i = 0; i < 80; i++) {
-    myDiv.innerHTML += `<div class="card col-sm-12 col-lg-4 justify-content-center mt-5 ">
+function postNewsApi() {
+  getNewsApi().then((response) => {
+    for (let i = 0; i < 80; i++) {
+      myDiv.innerHTML += `<div class="card col-sm-12 col-lg-4 justify-content-center mt-5 ">
       ${response[i]["videos"][0]["embed"]}
       <h5 class ="card-title">${response[i]["title"]}</h5>
       <div class="card-body">
@@ -40,18 +39,16 @@ getNewsApi().then((response) => {
       </div>
     </div>
       `;
-  }
-});
+    }
+  });
 }
 postNewsApi();
-
 
 async function getApiNewsWether() {
   try {
     return await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
-    )
-      .then((res) => res.json()); 
+    ).then((res) => res.json());
   } catch (err) {
     console.log(err);
   } finally {
@@ -59,23 +56,24 @@ async function getApiNewsWether() {
 }
 getApiNewsWether();
 
-function postApiNewsWether(){
-getApiNewsWether().then((item) => {
-  for (const res in item) {
-    some = Math.floor(item[res]["feels_like"] / 9);
-    // console.log(`${some}°C`);
-    switch (some) {
-      case some:
-        document.getElementById("weather1").innerHTML += `${some}°C ${sun_img}`;
-        break;
-      default:
-        break;
+function postApiNewsWether() {
+  getApiNewsWether().then((item) => {
+    for (const res in item) {
+      some = Math.floor(item[res]["feels_like"] / 9);
+      // console.log(`${some}°C`);
+      switch (some) {
+        case some:
+          document.getElementById(
+            "weather1"
+          ).innerHTML += `${some}°C ${sun_img}`;
+          break;
+        default:
+          break;
+      }
     }
-  }
-});
+  });
 }
-postApiNewsWether()
-
+postApiNewsWether();
 
 // let myDiv = document.getElementById("cardDiv");
 
