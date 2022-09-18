@@ -2,6 +2,7 @@ const API_KEY = "123cedf472ea7d740a81046892916adb";
 let temp1;
 let sun_img01 = `<img style="width:2vw;" src="../Photos/Home/sun.png" alt=""/>`;
 async function getApiWetherContact() {
+
   try {
     document.getElementById(
       "contactGif"
@@ -10,6 +11,7 @@ async function getApiWetherContact() {
       `https://api.openweathermap.org/data/2.5/weather?lat=${40.427416712151015}&lon=${-3.7042448033147037}&appid=${API_KEY}`
     ).then((res) => res.json());
   } catch (err) {
+    
     console.log(err);
   } finally {
     document.getElementById("contactGif").innerHTML = "";
